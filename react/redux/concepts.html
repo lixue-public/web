@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>what's redux</title>
+</head>
+<body>
+
+
+<div>
+    <h1>概念</h1>
+    <p>
+
+      UI 组件监听store,根据store的变化，更新组件
+      Action: 普通的json对象，有type及其他属性，可以很多
+      Store: redux中只有一个store, store中有多个reducer(纯函数）用于更改store的状态信息
+        UI组件调用store的方法（dispatch (action) 调用action发起动作；有的UI组件也可以不发起action，但是监听store进行渲染
+        UI组件调用store的另一个方法subscribe（handle)去处理事件的变化
+    </p>
+    <h1>解决状态多的问题</h1>
+    <p>
+        唯一状态对象 state
+        外部只读
+        通过纯函数(没有副作用）更改状态对象
+           不在原始初始对象上做更改，而是直接返回新的对象
+           function preFunction(state){
+          let newstate = state;  //不可以state.num++
+        newstate.num ++;
+        return state;// or return { newState.num;}
+
+    </p>
+    <h1>解决单一状态对象太大</h1>
+    <p>
+        多个纯函数
+        每个纯函数负责 修改 指定部分
+        整体纯函数的修改组成新的状态对象
+
+    </p>
+    <h1>reference links</h1>
+    <p>
+        https://github.com/reactjs/redux
+
+    </p>
+    <h1>代码编写格式</h1>
+    <p>
+        reducer:
+          const reducer = function (state,action){
+                  let newState = Object.assign({}, state);
+                  newState.backupList = action.value.backup_list;
+                  return newState;
+          note: 不能在state上直接修改，copy得到newState,进行操作；
+                最终肯定return state(state or newState)
+        }
+
+        reducer的拆分： 为了便于维护， 但最终是要合并成单一的reducer
+                   const Reducers = {
+                   versionInfoReducer,
+                   backupReducer,
+                   upgradeReducer,
+                   rollbackReducer,
+                   serviceReducer
+                   };
+
+                   export default combineReducers(Reducers);
+    </p>
+</div>
+
+</body>
+</html>

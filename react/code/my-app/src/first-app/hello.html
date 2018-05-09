@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first app</title>
+</head>
+<body>
+
+<div id="app">
+    <script src="../../node_modules"></script>
+    <script type="text/babel">
+        var MessageBox = React.createClass({
+            render: function(){
+                return (<h1>this is my first app</h1>);
+            }
+        });
+        React.reader(<MessageBox/>,document.getElementById("app"));
+    </script>
+</div>
+</body>
+</html>

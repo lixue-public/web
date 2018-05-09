@@ -1,0 +1,16 @@
+this is my first step
+
+prepare dev env according react officical doc.
+preconditions:
+  with node installed (version 5.5.0)
+my steps:
+  mkdir react
+  then git bash in this folder
+#command
+
+ npx create-react-app my-app
+ cd my-app
+ npm start
+
+
+# to start

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get started</title>
+</head>
+<body>
+<div id="root"> Are you ok</div>
+<script type="text/babel">
+    ReactDOM.render(
+    <h1>this is the first react App</h1>,
+    document.getElementById('root')
+    );
+</script>
+
+<div id="notebook">
+    <h1>what's react</h1>
+    <h2>定义</h2>
+    <p>
+        rect是一个 可复用 可聚合 的web 组件的js库
+        ？？ 为什么说它可复用、可聚合
+    </p>
+    <h2>特点</h2>
+    <p>组件化:js逻辑和HTML标签紧密相连，容易理解，包装整体</p>
+    <p>单向数据流：
+      react渲染方式
+        用户输入
+        从API获取数据 （哪些API呢）
+        将数据传给顶层组件（组件嵌套？？哪个是顶层？哪个是父子
+        react将每个组件渲染出来，而不是某个具体的DOM操作
+      这种渲染方式的好处
+        组件功能明确
+        结果可以预测（逻辑控制了状态）
+      component类似独立函数
+        可以接收参数（props)
+        可复用
+        可传递
+        可返回结果（渲染效果）
+    </p>
+    <p>虚拟的DOM树
+    Js很快，但是DOM操作慢
+      react如何更新、进行DOM操作
+        React根据当前props和states 重建DOM树
+        找到与上个DOM树的diff
+        特有的算法，计算how进行DOM更新效率高
+        从操作队列批量 更新DOM操作
+
+
+    </p>
+
+
+    <h1>what's JSX</h1>
+    <p>JavaScript的XML 语法扩展，采用你所熟悉 & 易理解的语法来定义DOM
+    react 如何使用JSX的
+        e.g
+       /**
+        <p className="hello">
+          Hello {this.props.name}
+       </p>
+      将编译成React构造器的方法
+       React.createElement("p",{className: "hello"},
+       "Hello ", this.props.name)
+        */
+
+    </p>
+
+</div>
+
+</body>
+</html>
